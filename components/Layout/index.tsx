@@ -5,7 +5,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Meta />
       <Navbar />
-      <div className="pt-px mb-4 md:mb-0">{children}</div>
+      <div className="container mx-auto text-gray-400 body-font">{children}</div>
     </>
   )
 }
