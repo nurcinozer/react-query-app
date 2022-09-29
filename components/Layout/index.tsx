@@ -1,4 +1,4 @@
-import { Meta, Navbar } from ".."
+import { Footer, Meta, Navbar } from ".."
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -6,6 +6,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Meta />
       <Navbar />
       <div className="container mx-auto text-gray-400 body-font">{children}</div>
+      <Footer />
     </>
   )
 }

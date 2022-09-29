@@ -2,11 +2,21 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { Button } from ".."
 
+enum Route {
+  Movies = "movie",
+  Series = "series",
+}
+
 export const Hero = () => {
   const router = useRouter();
 
-  const handleRoute = () => {
-    router.push("/movies");
+  const handleRoute = (value: Route) => {
+    if (value === Route.Movies) {
+      router.push("/movie");
+    }
+    if (value === Route.Series) {
+      router.push("/series");
+    }
   };
 
   return (
@@ -18,8 +28,8 @@ export const Hero = () => {
           <p className="mb-8 leading-relaxed">Millions of movies, TV shows and people to discover. Explore now.
           </p>
           <div className="flex justify-center gap-4">
-            <Button color="primary" onClick={() => handleRoute()}>Movies</Button>
-            <Button color="secondary">TV Shows</Button>
+            <Button color="primary" onClick={() => handleRoute(Route.Movies)}>Movies</Button>
+            <Button color="secondary" onClick={() => handleRoute(Route.Series)}>TV Shows</Button>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

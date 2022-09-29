@@ -5,3 +5,7 @@ export * from './Hero';
 export * from './Button';
 export * from './PageInfo';
 export * from './Card';
+export * from './PageLayout';
+export * from './Input';
+export * from './Select';
+export * from './Footer';

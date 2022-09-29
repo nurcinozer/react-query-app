@@ -4,7 +4,7 @@ type CardProps = {
   title: string;
   description: string;
   image: string;
-  releaseDate: string;
+  releaseDate: number;
 }
 
 export const Card: React.FC<CardProps> = ({
