@@ -68,17 +68,15 @@ const InnerPage: NextPage = () => {
             return titleAscSort(a, b);
         }
       });
-      console.log(filteredData);
+
       const newData = filteredData.filter((item) => {
         return item.releaseYear >= 2010;
       });
-      // console.log("newdata", newData);
 
       if (search && search.length >= 3) {
         const searchResult = newData.filter((item) => {
           return item.title.toLowerCase().includes(search.toLowerCase());
         });
-        // console.log("search", searchResult);
         setNewData(searchResult);
       } else {
         setNewData(newData);
@@ -87,18 +85,18 @@ const InnerPage: NextPage = () => {
   }, [data, search, slug, sort]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center h-screen">Loading...</div>;
   }
 
   if (isError) {
-    return <div>Error</div>;
+    return <div className="flex justify-center items-center h-screen">
+      Oops, something went wrong. Please try again later.
+    </div>;
   }
 
   if (!slug || !handleTitle || !handleDescription) {
     return null;
   }
-
-  console.log(sort);
 
   return (
     <PageLayout
