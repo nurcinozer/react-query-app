@@ -9,9 +9,9 @@ So, that's why I built a list with movies and series. When we click on one of th
 ## Installation
 
 ```
+npm i
+
 npm run dev
-# or
-yarn dev
 ```
 
 ## Usage
